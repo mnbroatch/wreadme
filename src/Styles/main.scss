@@ -1,0 +1,20 @@
+$navbar_height: 50px;
+
+@import 'global';
+@import 'Components/all';
+
+
+@font-face {
+  font-family: libel-suit;
+  src: url('../Fonts/libel.ttf');
+}
+
+@font-face {
+  font-family: modern-antiqua;
+  src: url('../Fonts/antiqua.ttf');
+}
+
+@font-face {
+  font-family: fresca-regular;
+  src: url('../Fonts/fresca.ttf');
+}

@@ -1,0 +1,32 @@
+.header {
+  background-color: #56273F;
+  height: $navbar_height; 
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(50, 50, 50, .5);
+}
+
+.header__button-wrapper {
+  display: inline-block;
+  height: $navbar_height; 
+}
+
+.header__button-wrapper__button {
+  color: white;
+  padding: {
+    left: 10px;
+    right: 10px;
+  }
+  display: table-cell;
+  font-family: fresca-regular;
+  height: 50px;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.header__button-wrapper__button--brand {
+  background: {
+    image: url('../Images/brand.jpg');
+    size: cover;
+  }
+}
+
