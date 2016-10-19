@@ -5,7 +5,8 @@ router.route('/top')
   .get((req, res) =>
     Tale.find({}).sort({rating: -1}).limit(3)
       .then(tales => res.send(tales))
-      .catch(err => res.status(400).send(err));
+      .catch(err => res.status(400).send(err))
+  );
 
 router.route('/')
   .get((req, res) => {
@@ -36,5 +37,16 @@ router.route('/:taleId')
       .then(tale => res.send(tale))
       .catch(err => res.status(400).send(err));
   });
+
+router.route('/snippet/:taleId')
+  .get((req, res) => {
+    Tale.findById(req.params.taleId)
+      .then(thing => thing.getSnippet())
+      .then(snippet => res.send(snippet))
+      .catch(err => res.status(400).send(err));
+  });
+
+
+
 
 module.exports = router;

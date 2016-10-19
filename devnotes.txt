@@ -1,0 +1,8 @@
+populating top tales
+
+- We need a snippet of text to show for each.
+- Query db for first chapter (always exists)
+  - add 100 char to the document for each top tale under field 'snippet'
+  - show under top tales list 
+
+

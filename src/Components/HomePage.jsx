@@ -9,7 +9,7 @@ class HomePage extends React.Component {
     this.props.getTopTales();
   }
 
-  render () {
+  render() {
     return (<div className="home-page">
       <IntroductionArea />
       <TaleListArea
@@ -41,6 +41,7 @@ const mapDispatchToProps = dispatch => ({
 HomePage.propTypes = {
   editTale: PropTypes.func.isRequired,
   removeTale: PropTypes.func.isRequired,
+  getTopTales: PropTypes.func.isRequired,
   tales: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 

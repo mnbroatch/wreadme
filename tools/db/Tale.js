@@ -23,6 +23,22 @@ const taleSchema = new mongoose.Schema({
   },
 });
 
+taleSchema.methods.getSnippet = function(cb) {
+  let firstChapterId = this.chapters[0];
+  return this.model('Chapter')
+    .findById(firstChapterId)
+    .then(firstChapter => {
+      let text = firstChapter.text;
+      return snipText(text);
+    })
+}
+
+
+function snipText(text) {
+  return text.slice(0, 100)
+}
+
+
 const Tale = mongoose.model('Tale', taleSchema);
 
 module.exports = Tale;
