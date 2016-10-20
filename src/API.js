@@ -12,6 +12,13 @@ API.getTopTales = () =>
   .then(res => res)
   .catch(toastr.warning);
 
+API.getSnippet = (taleId) =>
+  get({
+    url: `/api/tales/snippet/${taleId}`,
+  })
+  .then(res => res)
+  .catch(toastr.warning);
+
 API.getAllTales = () =>
   get({
     url: '/api/tales',
