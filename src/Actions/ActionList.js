@@ -7,6 +7,9 @@ export default [
   ['GET_ALL_TALES'],
   ['GET_ALL_TALES_SUCCESS', 'tales'],
 
+  ['GET_TALE', 'taleId'],
+  ['GET_TALE_SUCCESS', 'tale'],
+
   ['GET_TOP_TALES'],
   ['GET_TOP_TALES_SUCCESS', 'tales'],
 

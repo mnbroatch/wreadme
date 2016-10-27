@@ -7,17 +7,16 @@ import API from '../API';
 function* worker() {
   const talesWithoutSnippets = yield API.getTopTales();
   const tales = yield addSnippetsToTales(talesWithoutSnippets);
-  console.log('tales', tales)
   yield put(Actions.getTopTalesSuccess(tales));
 }
 
 function addSnippetToOneTale(tale) {
   return API.getSnippet(tale._id)
-    .then(snippet => Object.assign({}, tale, {snippet}));
+    .then(snippet => Object.assign({}, tale, { snippet }));
 }
 
 function addSnippetsToTales(taleArray) {
-  let snippetPromiseArray = taleArray.map(addSnippetToOneTale);
+  const snippetPromiseArray = taleArray.map(addSnippetToOneTale);
   return Promise.all(snippetPromiseArray);
 }
 

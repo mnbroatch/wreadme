@@ -3,11 +3,17 @@ import Types from '../Actions/Types';
 const INITIAL_STATE = {
   allTales: [],
   topTales: [],
+  currentTale: {},
 };
 
 const getAllTalesSuccess = (state, action) =>
   Object.assign({}, state, {
     allTales: action.tales,
+  });
+
+const getTaleSuccess = (state, action) =>
+  Object.assign({}, state, {
+    currentTale: action.tale,
   });
 
 const getTopTalesSuccess = (state, action) =>
@@ -26,7 +32,7 @@ const editTaleSuccess = (state, action) => {
   newState[index] = action.tale;
   return Object.assign({}, state, {
     allTales: newState,
-  })
+  });
 };
 
 const removeTaleSuccess = (state, action) =>
@@ -36,6 +42,7 @@ const removeTaleSuccess = (state, action) =>
 
 const ACTION_HANDLERS = {
   [Types.GET_ALL_TALES_SUCCESS]: getAllTalesSuccess,
+  [Types.GET_TALE_SUCCESS]: getTaleSuccess,
   [Types.GET_TOP_TALES_SUCCESS]: getTopTalesSuccess,
   [Types.CREATE_TALE_SUCCESS]: createTaleSuccess,
   [Types.EDIT_TALE_SUCCESS]: editTaleSuccess,

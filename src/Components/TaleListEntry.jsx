@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import OneFieldForm from './OneFieldForm';
+import { browserHistory } from 'react-router'
 
 class TaleListEntry extends React.Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class TaleListEntry extends React.Component {
 
   render() {
     return (
-      <div className="tale-list-entry">
+      <div className="tale-list-entry" onClick={() => browserHistory.push(`/tale/${this.props.data._id}`)}>
         <div className="tale-list-entry__title">
           {this.props.data.title}
         </div>

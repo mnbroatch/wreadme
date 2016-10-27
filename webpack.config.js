@@ -5,7 +5,8 @@ const build = process.env.NODE_ENV || 'development';
 const port = process.env.PORT || 3000;
 
 const devConfig = {
-  devtool: 'eval-cheap-module-sourcemap',
+  // devtool: 'eval-cheap-module-sourcemap',
+  devtool: 'sourcemap',
   entry: [
     'webpack-hot-middleware/client?reload=true',
     './src/index',

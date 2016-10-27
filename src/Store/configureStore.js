@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import Actions from '../Actions/Creators';
 import rootReducer from '../Reducers/';
 import sagas from '../Sagas/';
 

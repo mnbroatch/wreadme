@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Tale from './TaleListEntry';
+import TaleListEntry from './TaleListEntry';
 
 const TaleList = ({ tales, editTale, removeTale }) => {
   const taleElements = tales.map((el, ind) =>
