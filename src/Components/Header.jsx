@@ -19,7 +19,7 @@ const Header = () =>
       </Link>
       <Link
         className="header__button-wrapper__button"
-        to="authors"
+        to="stories"
       >
         Authors
       </Link>

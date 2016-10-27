@@ -11,9 +11,9 @@ function* worker(action) {
   const chapterToAdd = {
     text: action.tale.body,
     title: 'chapter 1',
-    number: 1,
     author: '5802ccb0ba7b6e0dd2cdb0df',
     rating: 0,
+    parent: null,
   };
   const addedChapter = yield API.addOneChapter(chapterToAdd);
 

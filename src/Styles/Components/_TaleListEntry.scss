@@ -1,0 +1,55 @@
+.tale-list-entry {
+  cursor: pointer;
+  transition: .5s;
+  border-bottom: 1px solid white;
+  position: relative;
+}
+
+.tale-list-entry:hover {
+  background-color: black;
+}
+
+.tale-list-entry__title {
+  font-family: libel-suit;  
+  background-color: $plum;
+  clear: left;
+  color: white;
+  display: inline-block;
+  float: left;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 8px;
+  margin-right: 8px;
+}
+
+.tale-list-entry__snippet {
+  font-family: fresca-regular;
+  padding: 5px;
+}
+
+.tale-list-entry__read-overlay {
+  transition: .5s;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  color: white;
+  font-family: fresca-regular;
+  font-size: 3em;
+  opacity: 0;
+}
+
+.tale-list-entry__read-overlay:hover {
+  opacity: 1;
+}
+
+.tale-list-entry__read-overlay:active {
+  transition: none;
+  background-color: #444;
+  box-shadow: inset 0 0 5px black;
+}
+

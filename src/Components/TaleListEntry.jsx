@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import OneFieldForm from './OneFieldForm';
 
-class Tale extends React.Component {
+class TaleListEntry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,21 +41,22 @@ class Tale extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <span>
-            Title: {this.props.data.title}
-          </span>
-          <span>
-            {this.props.data.text}
-          </span>
+      <div className="tale-list-entry">
+        <div className="tale-list-entry__title">
+          {this.props.data.title}
+        </div>
+        <div className="tale-list-entry__snippet">
+          {this.props.data.snippet}
+        </div>
+        <div className="tale-list-entry__read-overlay">
+          wread it!
         </div>
       </div>
     );
   }
 }
 
-Tale.propTypes = {
+TaleListEntry.propTypes = {
   editTale: PropTypes.func.isRequired,
   removeTale: PropTypes.func.isRequired,
   data: PropTypes.shape({
@@ -64,4 +65,4 @@ Tale.propTypes = {
   }).isRequired,
 };
 
-export default Tale;
+export default TaleListEntry;

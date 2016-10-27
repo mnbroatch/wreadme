@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
-import Tale from './Tale';
+import Tale from './TaleListEntry';
 
 const TaleList = ({ tales, editTale, removeTale }) => {
   const taleElements = tales.map((el, ind) =>
     (<div key={ind}>
-      <Tale data={el} removeTale={removeTale} editTale={editTale} />
+      <TaleListEntry data={el} removeTale={removeTale} editTale={editTale} />
     </div>)
   );
 

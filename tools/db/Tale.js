@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
+const SNIPPET_LENGTH = 200;
+
 const taleSchema = new mongoose.Schema({
   author: {
     type: mongoose.Schema.Types.ObjectId,
@@ -23,19 +25,20 @@ const taleSchema = new mongoose.Schema({
   },
 });
 
-taleSchema.methods.getSnippet = function(cb) {
-  let firstChapterId = this.chapters[0];
+taleSchema.methods.getSnippet = function getSnippet(cb) {
+  const firstChapterId = this.chapters[0];
   return this.model('Chapter')
     .findById(firstChapterId)
-    .then(firstChapter => {
-      let text = firstChapter.text;
+    .then((firstChapter) => {
+      const text = firstChapter.text;
+      if (cb) cb(snipText);
       return snipText(text);
-    })
-}
+    });
+};
 
 
 function snipText(text) {
-  return text.slice(0, 100)
+  return `${text.slice(0, SNIPPET_LENGTH)}...`;
 }
 
 

@@ -13,13 +13,14 @@ const chapterSchema = new mongoose.Schema({
     ref: 'User',
     required: true,
   },
-  number: {
-    type: Number,
-    required: true,
-  },
   rating: {
     type: Number,
     default: 0,
+    required: true,
+  },
+  parent: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
     required: true,
   },
 });
